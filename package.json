@@ -6,11 +6,13 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "server": "npx miragejs start --port 3001"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.0",
     "@types/react": "~18.2.14",
+    "axios": "^1.7.5",
     "expo": "~49.0.15",
     "expo-status-bar": "~1.6.0",
     "miragejs": "^0.1.48",
