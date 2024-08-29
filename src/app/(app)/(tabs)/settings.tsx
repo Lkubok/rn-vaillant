@@ -4,38 +4,24 @@ import { View } from "react-native";
 import { Button } from "react-native-paper";
 import { useSession } from "src/auth/AuthContext";
 import { i18n } from "src/locale/i18n";
+import { styles } from "src/ui/screenStyles/settings.styles";
 import { useAppTheme } from "src/ui/theme";
 
 export const SettingsScreen = () => {
   const { signOut } = useSession();
   const { colors } = useAppTheme();
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <View style={styles.container}>
       <View>
         <Ionicons
           name="hammer-outline"
           size={64}
           color={colors.primary}
-          style={{ marginBottom: 64 }}
+          style={styles.logo}
         />
       </View>
-      <Button
-        style={{
-          borderRadius: 8,
-          height: 50,
-          width: 200,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        mode="contained"
-        onPress={() => signOut()}
-      >
+      <Button style={styles.button} mode="contained" onPress={() => signOut()}>
         {i18n.t("auth.logOut")}
       </Button>
     </View>

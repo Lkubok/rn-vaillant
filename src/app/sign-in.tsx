@@ -5,7 +5,7 @@ import { Button, Text, TextInput, useTheme } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSession } from "src/auth/AuthContext";
 import { i18n } from "src/locale/i18n";
-import { styles } from "src/ui/screenStyles.ts/sign-in.styles";
+import { styles } from "src/ui/screenStyles/sign-in.styles";
 
 export const SignInScreen = () => {
   const { signIn } = useSession();
