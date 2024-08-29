@@ -7,7 +7,7 @@ const connectivityUrl = "customer-connectivity-report";
 
 export class ConnectivityApiService {
   static readonly getConnectivity = async (
-    data: ConnectivityParams
+    data: ConnectivityParams,
   ): Promise<AxiosResponse<ConnectivityResponse>> => {
     return axiosInstance.post(connectivityUrl, data);
   };
