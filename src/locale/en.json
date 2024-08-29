@@ -1,1 +1,11 @@
-{}
+{
+  "common": {
+    "appName": "Installer"
+  },
+  "auth": {
+    "logIn": "Log In",
+    "logOut": "Log Out",
+    "username": "Username",
+    "password": "Password"
+  }
+}

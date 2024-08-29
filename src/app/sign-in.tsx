@@ -1,16 +1,11 @@
-import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useState } from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { View, Image, KeyboardAvoidingView, Platform } from "react-native";
 import { Button, Text, TextInput, useTheme } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSession } from "src/auth/AuthContext";
+import { i18n } from "src/locale/i18n";
+import { styles } from "src/ui/screenStyles.ts/sign-in.styles";
 
 export const SignInScreen = () => {
   const { signIn } = useSession();
@@ -35,42 +30,37 @@ export const SignInScreen = () => {
           variant="headlineLarge"
           style={[styles.appName, { color: colors.primary }]}
         >
-          Installer
+          {i18n.t("common.appName")}
         </Text>
       </View>
 
       <KeyboardAvoidingView
-        style={{ flex: 1, justifyContent: "center", padding: 12 }}
+        style={styles.keyboardAvoid}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
         <TextInput
           mode="outlined"
-          label={"labeller"}
+          label={i18n.t("auth.username")}
           value={login}
           onChangeText={(text) => setLogin(text)}
           style={{ marginVertical: 12 }}
         />
         <TextInput
           mode="outlined"
-          label={"labeller"}
+          label={i18n.t("auth.password")}
           secureTextEntry
           value={password}
           onChangeText={(text) => setPassword(text)}
-          style={{ marginVertical: 12 }}
+          style={styles.textInput}
         />
         <Button
-          style={{
-            marginVertical: 12,
-            marginTop: 32,
-            borderRadius: 0,
-            marginBottom: Platform.OS === "android" ? 96 : 48,
-          }}
+          style={styles.button}
           mode="elevated"
           buttonColor={colors.primary}
           textColor={colors.onPrimary}
           onPress={onSignInHandler}
         >
-          Log in
+          {i18n.t("auth.logIn")}
         </Button>
       </KeyboardAvoidingView>
     </SafeAreaView>
@@ -78,22 +68,3 @@ export const SignInScreen = () => {
 };
 
 export default SignInScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "space-around",
-  },
-  header: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  appName: {
-    marginTop: 32,
-  },
-  logo: {
-    height: 80,
-    width: 300,
-  },
-});
