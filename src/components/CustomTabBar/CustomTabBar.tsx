@@ -11,7 +11,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = (props) => {
     <View
       style={{
         flexDirection: "row",
-        backgroundColor: colors.secondaryBackground,
+        backgroundColor: colors.primary,
         paddingBottom: Platform.OS === "android" ? 0 : 20,
       }}
     >
@@ -68,7 +68,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = (props) => {
             <Text
               variant="titleSmall"
               style={{
-                color: isFocused ? colors.primary : colors.background,
+                color: isFocused ? colors.onPrimary : colors.backdrop,
               }}
             >
               {label as string}

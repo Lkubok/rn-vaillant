@@ -7,5 +7,11 @@
     "logOut": "Log Out",
     "username": "Username",
     "password": "Password"
+  },
+  "navigation": {
+    "tabNames": {
+      "customers": "Customers",
+      "settings": "Settings"
+    }
   }
 }
