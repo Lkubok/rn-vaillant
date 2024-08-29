@@ -1,9 +1,8 @@
 import axios from "axios";
-
-const API_URL = process.env.EXPO_PUBLIC_API_URL;
+import { config } from "src/config/config";
 
 const defaultHeaders = {};
-const baseURL = API_URL;
+const baseURL = config.API_URL;
 
 export const axiosInstance = axios.create({
   baseURL,

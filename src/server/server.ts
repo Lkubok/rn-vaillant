@@ -1,6 +1,12 @@
 import { createServer } from "miragejs";
 import { faker } from "@faker-js/faker";
 
+declare global {
+  interface Window {
+    server?: any;
+  }
+}
+
 const customerCnt = 20;
 const offsetId = 20000;
 
@@ -34,7 +40,7 @@ const createRandomUser = (id: number) => {
 };
 
 if (window.server) {
-  server.shutdown();
+  window.server.shutdown();
 }
 
 export const startServer = () => {
