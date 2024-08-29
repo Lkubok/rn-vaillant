@@ -1,19 +1,20 @@
+import Ionicons from "@expo/vector-icons/Ionicons";
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
-import { startServer } from "./src/server";
-import { CustomersApiService } from "src/api/customersApi.service";
-import { User } from "src/types.ts/user";
-import { Connectivity } from "src/types.ts/connectivity";
-import { ConnectivityApiService } from "src/api/connectivityApi.service";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { Text } from "react-native-paper";
+import { ConnectivityApiService } from "src/api/connectivityApi.service";
+import { CustomersApiService } from "src/api/customersApi.service";
+import { Connectivity } from "src/types.ts/connectivity";
+import { User } from "src/types.ts/user";
+
+import { startServer } from "./src/server";
 
 startServer();
 
 export default function App() {
   const [customers, setCustomers] = useState<User[]>([]);
   const [connectivityStatus, setConnectivityStatus] = useState<Connectivity[]>(
-    []
+    [],
   );
 
   useEffect(() => {

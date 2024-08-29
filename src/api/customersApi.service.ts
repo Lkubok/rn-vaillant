@@ -1,8 +1,9 @@
 // import {axiosInstance} from '@api/';
 // import {LoginResponse, PostLoginParams} from '@src/types/apiTypes';
 import { AxiosResponse } from "axios";
-import { axiosInstance } from "./axiosInstance";
 import { CustomersResponse } from "src/types.ts/api";
+
+import { axiosInstance } from "./axiosInstance";
 
 const customerUrl = "customers";
 

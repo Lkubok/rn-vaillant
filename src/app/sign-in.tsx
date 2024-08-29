@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { useState } from "react";
-import { View, Image, KeyboardAvoidingView, Platform } from "react-native";
+import { Image, KeyboardAvoidingView, Platform, View } from "react-native";
 import { Button, Text, TextInput, useTheme } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSession } from "src/auth/AuthContext";

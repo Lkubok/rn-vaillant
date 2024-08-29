@@ -1,5 +1,5 @@
-import { createServer } from "miragejs";
 import { faker } from "@faker-js/faker";
+import { createServer } from "miragejs";
 
 declare global {
   interface Window {
@@ -58,7 +58,7 @@ export const startServer = () => {
 
       this.post("/api/customer-connectivity-report", (_, request) => {
         const body = JSON.parse(request.requestBody);
-        const customerIds = (body["customerIds"] ?? []) as Array<number>;
+        const customerIds = (body["customerIds"] ?? []) as number[];
         return {
           customerConnectivity: customerIds.map((id) => ({
             id,

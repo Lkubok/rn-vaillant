@@ -9,6 +9,7 @@ import {
   MD3LightTheme,
   useTheme,
 } from "react-native-paper";
+
 import { colorsLight } from "./colorsLight";
 
 const customDarkTheme = {

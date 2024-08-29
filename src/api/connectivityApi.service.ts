@@ -2,18 +2,19 @@
 // import {axiosInstance} from '@api/';
 // import {LoginResponse, PostLoginParams} from '@src/types/apiTypes';
 import { AxiosResponse } from "axios";
-import { axiosInstance } from "./axiosInstance";
 import {
   ConnectivityParams,
   ConnectivityResponse,
   //   CustomersResponse,
 } from "src/types.ts/api";
 
+import { axiosInstance } from "./axiosInstance";
+
 const connectivityUrl = "customer-connectivity-report";
 
 export class ConnectivityApiService {
   static readonly getConnectivity = async (
-    data: ConnectivityParams
+    data: ConnectivityParams,
   ): Promise<AxiosResponse<ConnectivityResponse>> => {
     // const bodyFormData = new FormData();
     console.log("GETTING Connectivity");
