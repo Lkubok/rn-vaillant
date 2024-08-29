@@ -1,3 +1,5 @@
+import { Connectivity } from "./connectivity";
+
 export type User = {
   _id: number;
   avatar: string;
@@ -16,3 +18,5 @@ export type Address = {
   city: string;
   country: string;
 };
+
+export type UserWithStatus = User & { status: Connectivity };

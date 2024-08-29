@@ -18,12 +18,12 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   descriptionContainer: {
-    flex: 3,
+    flex: 6,
     paddingLeft: 12,
   },
   statusContainer: {
     flex: 1,
-    borderWidth: 2,
-    borderColor: "blue",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

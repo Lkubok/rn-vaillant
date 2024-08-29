@@ -1,18 +1,17 @@
-import { Link, useRouter } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
+import { Link } from "expo-router";
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Avatar, Surface, Text } from "react-native-paper";
-import { i18n } from "src/locale/i18n";
-import { User } from "src/types/user";
+import { UserWithStatus } from "src/types/user";
+import { useAppTheme } from "src/ui/theme";
 
 import { styles } from "./UserItem.styles";
 
-type Props = {
-  user: User;
-};
+type Props = { user: UserWithStatus };
 
 export const UserItem = ({ user }: Props) => {
-  //   const router = useRouter;
+  const { colors } = useAppTheme();
   return (
     <Link href={{ pathname: `/customer/${user._id}` }} asChild>
       <TouchableOpacity>
@@ -26,18 +25,18 @@ export const UserItem = ({ user }: Props) => {
             </Text>
             <Text variant="labelSmall">{user.email}</Text>
             <Text variant="labelSmall">{user.subscriptionTier}</Text>
-            {/* <Text variant="labelSmall">{user.address}</Text> */}
           </View>
-          <View style={styles.statusContainer}></View>
-          {/* <Text style={styles.orderId}>
-            {i18n.t("orders.number")}: {item.number}
-          </Text>
-          <Text style={styles.textRow}>
-            {i18n.t("orders.status")}: {item.status_name}
-          </Text>
-          <Text style={styles.textRow}>
-            {i18n.t("orders.startDate")}: {item.addresses[0].date_time}
-          </Text> */}
+          <View style={styles.statusContainer}>
+            {user.status.isConnected ? (
+              <Ionicons
+                color={colors.primary}
+                name="checkmark-circle-outline"
+                size={32}
+              />
+            ) : (
+              <Ionicons color={colors.error} name="close-outline" size={32} />
+            )}
+          </View>
         </Surface>
       </TouchableOpacity>
     </Link>
