@@ -3,20 +3,16 @@ import { ConnectivityApiService } from "src/api/connectivityApi.service";
 import { CustomersApiService } from "src/api/customersApi.service";
 import { UserWithStatus } from "src/types/user";
 
-interface CustomersContextType {
+interface ContextType {
   customers: UserWithStatus[];
   setCustomers: React.Dispatch<React.SetStateAction<UserWithStatus[]>>;
   fetchCustomers: ({ isRefresh }: { isRefresh?: boolean }) => Promise<void>;
 }
 
-const CustomersContext = createContext<CustomersContextType | undefined>(
-  undefined
-);
+const CustomersContext = createContext<ContextType | undefined>(undefined);
 
-// Create a provider component
 const CustomersProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [customers, setCustomers] = useState<UserWithStatus[]>([]);
-  const [refreshing, setRefreshing] = useState(false);
 
   const fetchConnectivity = async ({
     customerIds,
@@ -67,7 +63,6 @@ const CustomersProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   );
 };
 
-// Custom hook to use the CustomersContext
 const useCustomers = () => {
   const context = React.useContext(CustomersContext);
   if (context === undefined) {

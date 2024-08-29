@@ -19,5 +19,17 @@
   },
   "screens": {
     "notFound": "Not found Page"
+  },
+  "user": {
+    "name": "Name",
+    "email": "Email",
+    "address": "Address",
+    "city": "City",
+    "state": "State",
+    "zip": "Zip",
+    "country": "Country",
+    "tier": "Tier",
+    "sex": "Sex",
+    "birthday": "Birthday"
   }
 }
