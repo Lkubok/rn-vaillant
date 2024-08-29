@@ -1,8 +1,11 @@
 import axios from "axios";
 import { config } from "src/config/config";
 
-const defaultHeaders = {};
-const baseURL = config.API_URL;
+const defaultHeaders = {
+  "Content-Type": "application/json",
+  Accept: "application/json",
+};
+const baseURL = config.API_BASE_URL;
 
 export const axiosInstance = axios.create({
   baseURL,

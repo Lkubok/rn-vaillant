@@ -1,6 +1,8 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { startServer } from "./src/server";
+import { CustomersApiService } from "src/api/customersApi.service";
+// import { CustomersApiService } from "src/api/cusomersApi.service";
 
 startServer();
 
@@ -9,9 +11,17 @@ export default function App() {
   const [connectivityStatus, setConnectivityStatus] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("/api/customers")
-      .then((res) => res.json())
-      .then((json) => setCustomers(json.customers));
+    // fetch("/api/customers")
+    //   .then((res) => res.json())
+    //   .then((json) => setCustomers(json.customers));
+
+    const asyncCustomersFetch = async () => {
+      const response = await CustomersApiService.getCustomers();
+      // const json = await response.json();
+      // setCustomers(json.customers);
+    };
+
+    asyncCustomersFetch();
 
     fetch("/api/customer-connectivity-report", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.

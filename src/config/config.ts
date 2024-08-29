@@ -1,5 +1,5 @@
-const API_URL = process.env.EXPO_PUBLIC_API_URL;
+const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL;
 
 export const config = {
-  API_URL,
+  API_BASE_URL,
 };
