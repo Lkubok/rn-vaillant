@@ -26,7 +26,7 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: colors.onPrimary,
         tabBarInactiveTintColor: colors.secondary,
-        header: ({ layout, navigation, options, route }) => (
+        header: ({ navigation, options, route }) => (
           <CustomHeader
             navigation={navigation}
             route={route}

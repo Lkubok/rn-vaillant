@@ -12,6 +12,9 @@
     "tabNames": {
       "customers": "Customers",
       "settings": "Settings"
+    },
+    "screenNames": {
+      "customerDetails": "Customer Details"
     }
   },
   "screens": {
