@@ -1,8 +1,3 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
 import { Redirect, Stack } from "expo-router";
 import { Text } from "react-native";
 import { useSession } from "src/auth/AuthContext";
@@ -20,13 +15,4 @@ export default function AppLayout() {
   }
 
   return <Stack />;
-  // return (
-  //   <ThemeProvider value={DefaultTheme}>
-  //     <Stack screenOptions={{ headerShown: false }}>
-  //       {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
-  //       {/* <Stack.Screen name="sign-in" options={{ headerShown: false }} /> */}
-  //       <Stack.Screen name="customers" options={{ headerShown: false }} />
-  //     </Stack>
-  //   </ThemeProvider>
-  // );
 }
