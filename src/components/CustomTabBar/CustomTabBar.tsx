@@ -66,7 +66,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = (props) => {
               size: 24,
             })}
             <Text
-              variant="titleSmall"
+              variant="titleMedium"
               style={{
                 color: isFocused ? colors.onPrimary : colors.backdrop,
               }}

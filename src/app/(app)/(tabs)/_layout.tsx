@@ -42,7 +42,11 @@ export default function TabLayout() {
         options={{
           title: i18n.t("navigation.tabNames.customers"),
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name="checkmark-circle" size={32} color="green" />
+            <Ionicons
+              name="people-outline"
+              size={32}
+              color={focused ? colors.onPrimary : colors.backdrop}
+            />
           ),
         }}
       />
@@ -51,7 +55,11 @@ export default function TabLayout() {
         options={{
           title: i18n.t("navigation.tabNames.settings"),
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name="checkmark-circle" size={32} color="green" />
+            <Ionicons
+              name="settings-outline"
+              size={32}
+              color={focused ? colors.onPrimary : colors.backdrop}
+            />
           ),
         }}
       />
