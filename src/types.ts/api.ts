@@ -1,5 +1,15 @@
+import { Connectivity } from "./connectivity";
 import { User } from "./user";
 
 export type CustomersResponse = {
-  data: User[];
+  count: number;
+  customers: User[];
+};
+
+export type ConnectivityResponse = {
+  customerConnectivity: Connectivity[];
+};
+
+export type ConnectivityParams = {
+  customerIds: number[];
 };
