@@ -32,7 +32,7 @@ export const CustomersScreen = () => {
     <View>
       <FlatList
         data={customers}
-        style={{ padding: 12 }}
+        style={{ paddingVertical: 12 }}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <UserItem key={item._id} user={item} />}
         keyExtractor={(item) => item._id.toString()}

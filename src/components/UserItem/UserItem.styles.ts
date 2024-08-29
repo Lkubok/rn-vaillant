@@ -12,19 +12,18 @@ export const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     marginBottom: 24,
+    flexDirection: "row",
   },
-  //   orderId: {
-  //     fontSize: 16,
-  //     fontWeight: "bold",
-  //     marginBottom: 12,
-  //   },
-  //   textRow: {
-  //     fontSize: 14,
-  //     marginBottom: 6,
-  //   },
-  //   orderFooter: {
-  //     marginTop: 32,
-  //     flexDirection: "row",
-  //     justifyContent: "space-around",
-  //   },
+  avatarContainer: {
+    justifyContent: "center",
+  },
+  descriptionContainer: {
+    flex: 3,
+    paddingLeft: 12,
+  },
+  statusContainer: {
+    flex: 1,
+    borderWidth: 2,
+    borderColor: "blue",
+  },
 });

@@ -38,9 +38,6 @@ export const CustomHeader = ({
         title={options.title}
         style={{ alignItems: "center" }}
       />
-      {/* {route.name === ScreenNames.SignIn && (
-        <Appbar.Action icon="logout" onPress={() => signOut()} />
-      )} */}
     </Appbar.Header>
   );
 };
