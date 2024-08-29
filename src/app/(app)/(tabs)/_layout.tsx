@@ -3,6 +3,7 @@ import * as NavigationBar from "expo-navigation-bar";
 import { Tabs } from "expo-router";
 import React, { useEffect } from "react";
 import { Platform } from "react-native";
+import { CustomHeader } from "src/components/CustomHeader/CustomHeader";
 import { CustomTabBar } from "src/components/CustomTabBar/CustomTabBar";
 import { i18n } from "src/locale/i18n";
 import { useAppTheme } from "src/ui/theme";
@@ -25,7 +26,14 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: colors.onPrimary,
         tabBarInactiveTintColor: colors.secondary,
-        headerShown: false,
+        // headerShown: false,
+        header: ({ layout, navigation, options, route }) => (
+          <CustomHeader
+            navigation={navigation}
+            route={route}
+            options={options}
+          />
+        ),
       }}
       tabBar={(props) => <CustomTabBar {...props} />}
     >
