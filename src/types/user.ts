@@ -19,4 +19,7 @@ export type Address = {
   country: string;
 };
 
-export type UserWithStatus = User & { status: Connectivity };
+export type UserWithStatus = User & {
+  status: Connectivity;
+  generatedId: string;
+};

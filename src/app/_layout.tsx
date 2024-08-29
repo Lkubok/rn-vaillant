@@ -5,6 +5,7 @@ import { useColorScheme } from "react-native";
 import { PaperProvider } from "react-native-paper";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { SessionProvider } from "src/auth/AuthContext";
+import { CustomersProvider } from "src/contexts/CustomersData";
 import { startServer } from "src/server";
 import { CombinedDarkTheme, CombinedLightTheme } from "src/ui/theme";
 
@@ -18,7 +19,9 @@ export default function Root() {
     <SafeAreaProvider>
       <PaperProvider theme={isDark ? CombinedDarkTheme : CombinedLightTheme}>
         <SessionProvider>
-          <Slot />
+          <CustomersProvider>
+            <Slot />
+          </CustomersProvider>
         </SessionProvider>
       </PaperProvider>
     </SafeAreaProvider>

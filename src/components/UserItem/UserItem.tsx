@@ -13,7 +13,7 @@ type Props = { user: UserWithStatus };
 export const UserItem = ({ user }: Props) => {
   const { colors } = useAppTheme();
   return (
-    <Link href={{ pathname: `/customer/${user._id}` }} asChild>
+    <Link href={{ pathname: `/customer/${user.generatedId}` }} asChild>
       <TouchableOpacity>
         <Surface style={styles.item}>
           <View style={styles.avatarContainer}>
